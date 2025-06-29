@@ -1,4 +1,4 @@
-package io.github.shimoranla.utils.basic.Net
+package io.github.shimoranla.utils.basic.net
 
 import io.github.shimoranla.utils.basic.LauncherInfo
 import okhttp3.*

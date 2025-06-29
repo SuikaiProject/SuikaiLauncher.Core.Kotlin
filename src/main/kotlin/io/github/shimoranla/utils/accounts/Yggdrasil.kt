@@ -1,8 +1,8 @@
 package io.github.shimoranla.utils.accounts
 
 import io.github.shimoranla.utils.basic.*
-import io.github.shimoranla.utils.basic.Net.HttpRequestOptions
-import io.github.shimoranla.utils.basic.Net.HttpWebRequest
+import io.github.shimoranla.utils.basic.net.HttpRequestOptions
+import io.github.shimoranla.utils.basic.net.HttpWebRequest
 
 
 fun login(yggdrasilApiAddressOrNideId: String, account: YggdrasilAccount,loginType: LoginType){
