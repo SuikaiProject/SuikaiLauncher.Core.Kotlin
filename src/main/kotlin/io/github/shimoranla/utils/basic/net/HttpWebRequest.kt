@@ -39,9 +39,10 @@ class StreamRequestBody(
 data class HttpRequestOptions(
     val url: String,
     val method: String,
-    var headers: MutableMap<String, String>? = null
+    var headers: MutableMap<String, String>? = null,
     val retryCount: Int = 3,
-    val retryDelayMillis: Long = 200
+    val retryDelayMillis: Long = 200,
+    val ensureSuccessStatus:Boolean = true
 ) {
     private val buffer: Buffer = Buffer()
 
@@ -101,7 +102,7 @@ class HttpWebRequest {
             }
 
         // OkHttp 的协程扩展
-        suspend fun Call.await(): Response {
+        suspend fun Call.await(options:HttpRequestOptions? = null): Response {
             return suspendCancellableCoroutine { continuation ->
                 enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {
@@ -110,7 +111,7 @@ class HttpWebRequest {
 
                     override fun onFailure(call: Call, e: IOException) {
                         if (continuation.isCancelled) return
-                        continuation.resumeWithException(e)
+                        if(options != null && options.ensureSuccessStatus) throw RuntimeException("响应状态码不指示成功",e)
                     }
                 })
 

@@ -24,19 +24,24 @@ data class Source(
                 val repostioryCache = Setup.load("$repositoryName.conf")
                 val clientUrl = clientV2 ?: clientV1 ?: ""
                 val javaUrl = javaList?:""
-                if(!javaUrl.isBlank()) {
-
+                if(javaUrl.isNotBlank()) {
                     HttpWebRequest.getServerResponse(
                         HttpRequestOptions(
                             javaUrl,
-                            "GET"
+                            "GET",
+                            mutableMapOf(
+                                "If-None-Match" to repostioryCache.getProperty("Minecraft.Version.ETag")
+                            )
                         )
                     )
                 }
-                if(!clientUrl.isBlank()) HttpWebRequest.getServerResponse(
+                if(clientUrl.isNotBlank()) HttpWebRequest.getServerResponse(
                     HttpRequestOptions(
                         javaUrl,
-                        "GET"
+                        "GET",
+                        mutableMapOf(
+                            "If-None-Match" to repostioryCache.getProperty("Minecraft.Java.ETag")
+                        )
                     )
                 )
         }catch (ex: Exception){
