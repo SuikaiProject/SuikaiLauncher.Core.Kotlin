@@ -111,7 +111,7 @@ class HttpWebRequest {
 
                     override fun onFailure(call: Call, e: IOException) {
                         if (continuation.isCancelled) return
-                        if(options != null && options.ensureSuccessStatus) throw RuntimeException("响应状态码不指示成功",e)
+                        if(options != null && options.ensureSuccessStatus) continuation.resumeWithException(e)
                     }
                 })
 
@@ -120,7 +120,7 @@ class HttpWebRequest {
                     try {
                         cancel()
                     } catch (ex: Throwable) {
-                        // 忽略取消异常
+
                     }
                 }
             }

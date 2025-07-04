@@ -20,6 +20,7 @@ dependencies {
     implementation("com.microsoft.azure:msal4j:1.21.0")
     implementation("org.apache.maven:maven-artifact:3.9.6")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("com.microsoft.azure:msal4j-brokers:1.0.3-beta")
     testImplementation(kotlin("test"))
 }
 

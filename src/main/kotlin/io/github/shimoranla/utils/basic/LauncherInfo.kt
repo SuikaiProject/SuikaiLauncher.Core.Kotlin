@@ -10,6 +10,8 @@ class LauncherInfo {
         val dataPath = ((if(System.getProperty("os.name").contains("win",true))
                             System.getenv("APPDATA")
                         else System.getProperty("user.home")) + "/" + "SuikaiLauncher/Core/Data")
-            .replace("\\","/").replace("//","/")
+            .replace("\\","/")
+            .replace("//","/")
+            .removeSuffix("/")
     }
 }

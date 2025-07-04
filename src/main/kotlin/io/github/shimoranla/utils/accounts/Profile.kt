@@ -22,4 +22,10 @@ class ProfileManager{
     init {
 
     }
+    fun forceExpiredProfile(){
+
+    }
+    fun deleteProfile(){
+
+    }
 }

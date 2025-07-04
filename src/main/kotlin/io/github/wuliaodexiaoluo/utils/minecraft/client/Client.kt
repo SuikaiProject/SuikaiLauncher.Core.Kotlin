@@ -1,5 +1,7 @@
 package io.github.wuliaodexiaoluo.utils.minecraft.client
 
+import io.github.sulingjiang.utils.Net.Downloader
+import io.github.sulingjiang.utils.net.NetFile
 import java.io.BufferedOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -34,11 +36,6 @@ class Client(
         Files.move(Paths.get(tempPath), Paths.get(mcVersion.corePath),
             StandardCopyOption.REPLACE_EXISTING)
     }
-
-    fun downloadVersionJson(){
-        //if(mcVersion.)
-    }
-
     private fun processJarEntries(jarPath: String, out: JarOutputStream) {
         JarFile(jarPath).use { jarFile ->
             jarFile.entries().toList().forEach { entry ->
@@ -50,9 +47,16 @@ class Client(
             }
         }
     }
-    // Oracle JDK 会在有签名时验证文件签名，但是我们已经修改了 Jar 文件，所以原签名失效了
+    // Oracle JDK 会在有签名时验证文件签名，but 我们已经修改了 Jar 文件，所以原签名失效了
     // 这会导致加载 Jar 时抛出 Exception
     private fun isSignatureFile(name: String): Boolean {
         return name.startsWith("META-INF/")
+    }
+    suspend fun downloadVersionJson(){
+        if(mcVersion.jsonUrl.isBlank()) {
+            mcVersion.lookup()
+        }
+        Downloader
+
     }
 }

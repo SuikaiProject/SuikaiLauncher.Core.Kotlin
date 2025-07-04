@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cb197ce-a4ad-4dd9-bfb3-bbc371bb353a" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/baiyuexiao496/utils/ForgeTools/DataModels.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/baiyuexiao496/utils/ForgeTools/Install.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/FileIO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Setup.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/Client.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/McVersion.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/Source.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/runtimes/JavaProperty.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/LogTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/LauncherInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/LauncherInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Logger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Logger.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Text.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Text.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Tracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/Tracker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/net/HttpWebRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/basic/net/HttpWebRequest.kt" afterDir="false" />
+    <list default="true" id="92d23052-d59b-42f0-b9dc-9b64e562ace1" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/accounts/MicrosoftAccount.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +22,26 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SuikaiLauncher.Core" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -42,97 +49,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="D:\project\kotlin\maven\packages" />
-        <option name="userSettingsFile" value="C:\Users\seewo\.m2\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2z204DT7EgeksHy7G4kVv0pxTN5" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2zPIqbO6JWsHfVPrgos5dH7GWhB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.构建 SuikaiLauncher.Core.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.HttpWebRequestKt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LoggerKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.NetworkKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TextKt.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/project/kotlin/SuikaiLauncher.Core/src/main/kotlin/Main.kt&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "onboarding.tips.debug.path": "D:/project/kotlin/SuikaiLauncher.Core/src/main/kotlin/Main.kt",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\kotlin\SuikaiLauncher.Core\src\main\kotlin" />
-    </key>
-    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
-      <recent name="io.github.shimoranla.utils.basic.Net" />
-      <recent name="io.github.shimoranla.utils.basic" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Kotlin.HttpWebRequestKt (1)">
-    <configuration name="HttpWebRequestKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.shimoranla.utils.basic.net.HttpWebRequestKt" />
-      <module name="SuikaiLauncher.Core.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpWebRequestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.shimoranla.utils.basic.Net.HttpWebRequestKt" />
-      <module name="SuikaiLauncher.Core.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoggerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.shimoranla.utils.basic.LoggerKt" />
-      <module name="SuikaiLauncher.Core.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TextKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.shimoranla.utils.basic.TextKt" />
-      <module name="SuikaiLauncher.Core.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.HttpWebRequestKt (1)" />
-        <item itemvalue="Kotlin.TextKt" />
-        <item itemvalue="Kotlin.LoggerKt" />
-        <item itemvalue="Kotlin.HttpWebRequestKt" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="4cb197ce-a4ad-4dd9-bfb3-bbc371bb353a" name="更改" comment="" />
-      <created>1750913669865</created>
+      <changelist id="92d23052-d59b-42f0-b9dc-9b64e562ace1" name="更改" comment="" />
+      <created>1751626492627</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1750913669865</updated>
+      <updated>1751626492627</updated>
     </task>
     <servers />
   </component>

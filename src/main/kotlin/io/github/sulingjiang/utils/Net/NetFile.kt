@@ -11,17 +11,20 @@ enum class NetFileState{
 
 
 data class NetFile(
-    val filePath: String,
+    val filePath: String?,
     val fileSize: Long = -1L,
-    val url:MutableList<String>,
+    val url:MutableList<String>?,
     val hash:String,
     var starts:Long = 0L,
     var ends:Long = -1L
 ){
     var currentUrl: String = ""
-    init{
-        this.currentUrl = this.url.first()
-        this.url.removeAt(0)
+    init {
+        if (url != null) {
+            this.currentUrl = this.url.first()
+            this.url.removeAt(0)
+        }
+        if(!(fileSize == -2L) && url == null) throw IllegalArgumentException("url 不能为空")
     }
     val failedSourceWithException:MutableMap<String,Exception> = mutableMapOf()
 
@@ -29,7 +32,10 @@ data class NetFile(
         val multipleDownloadBlocked: MutableList<String> = mutableListOf(
             "bmclapi",
             "openbmclapi",
-            "edu.cn"
+            "edu.cn",
+            "pysio.online",
+            "mcimirror.top",
+            "luotianyi-0712.top"
         )
 
         val minSize:Long = 1 * 1024 * 1024
@@ -37,7 +43,8 @@ data class NetFile(
 
     fun splitFile():MutableList<NetFile> {
         if(fileSize <= 0L) return mutableListOf(this)
-        if(multipleDownloadBlocked.any{ it in this.url})
+        // 不对处于多线程下载黑名单的域名进行多线程下载
+        if(multipleDownloadBlocked.any{ it in this.currentUrl}) mutableListOf(this)
         // 不对小于 1M 的文件进行多线程下载
         if(min(fileSize,minSize) == fileSize) return mutableListOf(this)
         val fileList:MutableList<NetFile> = mutableListOf()
