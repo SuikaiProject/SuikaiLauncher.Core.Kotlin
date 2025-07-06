@@ -1,5 +1,6 @@
 package io.github.wuliaodexiaoluo.utils.minecraft.client.dataModels
 
+import io.github.wuliaodexiaoluo.utils.minecraft.client.ReleaseType
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -25,5 +26,6 @@ data class Versions(
     // 用于存储版本描述
     var description:String?,
     // 存储格式化后的时间
-    var releaseAt: LocalDateTime?
+    var releaseAt: LocalDateTime?,
+    var currentType:ReleaseType?
 )

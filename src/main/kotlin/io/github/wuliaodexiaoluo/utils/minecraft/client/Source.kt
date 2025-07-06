@@ -25,11 +25,11 @@ enum class ReleaseType{
 }
 
 data class Source(
-    var clientV1:String? = null,
-    var clientV2:String? = null,
-    var javaList:String? = null,
-    var resourceServer:String? = null,
-    var mavenServer:String? = null,
+    val clientV1:String? = null,
+    val clientV2:String? = null,
+    val javaList:String? = null,
+    val resourceServer:String? = null,
+    val mavenServer:String? = null,
     val repositoryName:String,
     var isDisable: Boolean = false,
     var isSelected:Boolean = false,
@@ -151,18 +151,32 @@ class DefaultSource {
             versionList.forEach { version ->
                 version.releaseAt = OffsetDateTime.parse(version.releaseTime, formatter).toLocalDateTime()
                 when (version.type) {
-                    "release" -> version.description = "${version.releaseAt.toString()} | 正式版"
+                    "release" -> {
+                        version.description = "${version.releaseAt.toString()} | 正式版"
+                        version.currentType = ReleaseType.Release
+                    }
                     "snapshot" -> {
                         when (version.releaseAt?.format(DateTimeFormatter.ofPattern("MM-dd"))) {
-                            null -> version.description = "未知版本"
-                            "04-01" -> version.description =
-                                "${version.releaseAt?.year} | ${getFoolDescription(version.id)}"
-
-                            else -> version.description = "${version.releaseAt.toString()} | 快照版 "
+                            null -> {
+                                version.description = "未知版本"
+                                version.currentType = ReleaseType.Unknown
+                            }
+                            "04-01" -> {
+                                version.description =
+                                    "${version.releaseAt?.year} | ${getFoolDescription(version.id)}"
+                                version.currentType = ReleaseType.Fool
+                            }
+                            else -> {
+                                version.description = "${version.releaseAt.toString()} | 快照版 "
+                                version.currentType = ReleaseType.Snapshot
+                            }
                         }
                     }
 
-                    "old_beta", "old_alpha" -> version.description = "${version.releaseAt.toString()} | 远古版"
+                    "old_beta", "old_alpha" -> {
+                        version.description = "${version.releaseAt.toString()} | 远古版"
+                        version.currentType = ReleaseType.Old
+                    }
                 }
             }
         }
@@ -209,6 +223,41 @@ class DefaultSource {
         }
 
         var mcVersionList: MinecraftVersion? = null
+    }
+
+    /**
+     * 获取资源文件的下载列表
+     * @param
+     */
+    fun getAssetsDlSource(url:String):MutableList<String>{
+        val downloadUrls:MutableList<String> = mutableListOf()
+        downloadUrls.add(url)
+        downloadUrls.add(url.replace(mojang.resourceServer!!,bmclAPI.resourceServer!!))
+        userCustomSource.forEach{ source ->
+            if(source.resourceServer != null){
+                downloadUrls.add(url.replace(mojang.resourceServer,source.resourceServer))
+            }
+        }
+        return downloadUrls
+    }
+    fun getLibrariesDlSource(url:String):MutableList<String>{
+        val fixedUrl = url.replace(
+            "launcher.mojang.com","piston-meta.mojang.com"
+        ).replace(
+            "launchermeta.mojang.com","piston-meta.mojang.com"
+        )
+        val downloadUrls:MutableList<String> = mutableListOf(fixedUrl)
+        downloadUrls.add(fixedUrl.replace(mojang.mavenServer!!, bmclAPI.mavenServer!!)
+            .replace("piston-meta.mojang.com","bmclapi2.bangbang93.com")
+            .replace("piston-data.mojang.com","bmclapi2.bangbang93.com"))
+        userCustomSource.forEach{source ->
+            if (source.mavenServer != null){
+                downloadUrls.add(fixedUrl.replace(mojang.mavenServer, source.mavenServer)
+                    .replace("piston-meta.mojang.com",source.mavenServer)
+                    .replace("piston-data.mojang.com",source.mavenServer))
+            }
+        }
+        return downloadUrls
     }
 }
 

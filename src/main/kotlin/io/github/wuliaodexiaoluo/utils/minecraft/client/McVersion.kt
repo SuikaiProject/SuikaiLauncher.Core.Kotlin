@@ -1,39 +1,47 @@
 package io.github.wuliaodexiaoluo.utils.minecraft.client
 
+import io.github.wuliaodexiaoluo.utils.minecraft.client.dataModels.VersionJson
 import io.github.wuliaodexiaoluo.utils.minecraft.runtimes.JavaProperty
 
-data class McVersion (
-    var gameVersionName:String = "",
-    var majorVersion:Int = -1,
-    var minorVersion: Int = -1,
-    var patchVersion:Int = -1,
-    var isSnapshot:Boolean = false,
-    var isOldVersion:Boolean = false,
-    var hasSubassembly:Boolean = false,
-    var launchCount:Long = -1L,
-    var requireJavaVersion: JavaProperty? = null,
-    var jsonPath:String,
-    var gamePath:String,
-    var enableVersionIsolation:Boolean = true,
-    var corePath:String = "",
-    var jsonUrl:String = ""
-){
-        suspend fun lookup(){
-            if(gameVersionName.isBlank()) throw IllegalArgumentException("gameVersionName 不能为空")
-            if(DefaultSource.mcVersionList == null) DefaultSource.update()
-            DefaultSource.mcVersionList?.versions?.forEach { version ->
-                if(version.id == gameVersionName){
-                    isSnapshot = version.description!!.contains("快照版")
-                    isOldVersion = version.description!!.contains("远古版")
-                    val versionId = version.type.split(".")
-                    majorVersion = if(isOldVersion) 0 else if (isSnapshot) 2 else versionId[0].toInt()
-                    minorVersion = versionId[1].toInt()
-                    patchVersion = versionId[2].toInt()
-                    jsonUrl = version.url
-                }
-            }
+class GameProfile{
+    var versionIsolation:Boolean = false
+    var requireJava:JavaProperty? = null
+    var installPath:String = ""
+    var launchCount:Long = -1L
+    var hasSubassembly:Boolean = false
+    var minecraftPath:String? = null
+    var gameVersionName:String? = null
+    companion object{
+        fun getProfile(installPath:String):GameProfile{
+            val profile = GameProfile()
+            profile.installPath = installPath
+            return profile
         }
-        fun localLookup(localName: String){
+    }
+}
 
+
+class McVersion (
+    var versionName: String = "",
+    var isSnapshot: Boolean = false,
+    var isOldVersion: Boolean = false,
+    var releaseTime: String = "",
+    var jsonUrl: String = "",
+    var jsonHash: String = "",
+    var jsonData:String = "",
+    var jsonClass:VersionJson?
+){
+    companion object{
+        suspend fun lookup(gameVersion:String):McVersion?{
+            if(DefaultSource.mcVersionList == null) DefaultSource.update()
+            DefaultSource.mcVersionList?.versions?.forEach{version ->
+                if(version.id == gameVersion) return McVersion(
+                    version.id,
+                    version.currentType == ReleaseType.Snapshot,
+                    version.currentType == ReleaseType.Old
+                )
+            }
+            return null
         }
+    }
 }

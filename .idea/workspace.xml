@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92d23052-d59b-42f0-b9dc-9b64e562ace1" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/shimoranla/utils/accounts/MicrosoftAccount.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/dataModels/VersionAssets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/sulingjiang/utils/Net/Downloader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/sulingjiang/utils/Net/Downloader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/McVersion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/McVersion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/Source.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/Source.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/dataModels/MinecraftVersion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/wuliaodexiaoluo/utils/minecraft/client/dataModels/MinecraftVersion.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +49,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -65,10 +72,12 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/project/kotlin/SuikaiLauncher.Core/src/main/kotlin/Main.kt",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="92d23052-d59b-42f0-b9dc-9b64e562ace1" name="更改" comment="" />
@@ -78,5 +87,16 @@
       <updated>1751626492627</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
